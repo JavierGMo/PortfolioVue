@@ -15,8 +15,8 @@ module.exports = function(to, subject, text, fullName){
         const transport = nodeMailer.createTransport({
             service : 'gmail',
             auth : {
-                user : 'greffperonahaws@gmail.com',
-                pass : 'firusteck Respre*cre'
+                user : process.env.MAL || 'greffperonahaws@gmail.com',
+                pass : process.env.ACC || 'firusteck Respre*cre'
             }
         });
     
