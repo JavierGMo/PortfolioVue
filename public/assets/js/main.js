@@ -3,9 +3,9 @@ const portfolioApp = new Vue({
     el : '#portafolioMain',
     data : {
         projects : [
-            {id : 1, title : 'Portafolio', description : 'Portafolio hecho con Node y Vue.js', img_ref : 'assets/img/car1.png', link_github : 'https://www.github.com', link_website : 'https://www.github.com'},
-            {id : 2, title : 'Carrito de compras', description : 'Carrito con Bootstrap y Laravel', img_ref : 'assets/img/por1.png', link_github : 'https://www.github.com', link_website : 'https://github.com/JavierGMo/Carrito-Laravel'},
-            {id : 3, title : 'App del tiempo', description : 'App de tiempo con Vue.js y PHP', img_ref : 'assets/img/clim1.png', link_github : 'https://www.github.com', link_website : 'https://github.com/JavierGMo/clima-app-vue'},
+            {id : 1, title : 'Portafolio', description : 'Portafolio hecho con Node y Vue.js', img_ref : 'assets/img/car1.png', link_github : 'https://github.com/JavierGMo/PortfolioVue', link_website : 'https://portfoliovjgm.herokuapp.com'},
+            {id : 2, title : 'Carrito de compras', description : 'Carrito con Bootstrap y Laravel', img_ref : 'assets/img/por1.png', link_github : 'https://github.com/JavierGMo/Carrito-Laravel', link_website : ''},
+            {id : 3, title : 'App del tiempo', description : 'App de tiempo con Vue.js y PHP', img_ref : 'assets/img/clim1.png', link_github : 'https://github.com/JavierGMo/clima-app-vue', link_website : ''},
         ],
         hamburguerMenu : true,
         windowWidth : window.innerWidth,
