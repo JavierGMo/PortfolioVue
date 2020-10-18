@@ -108,7 +108,7 @@ const portfolioApp = new Vue({
                 <div class=""><p class="txt-center">Enlaces</p></div><!--title card-->
                 <div class="card-links d-fx f-around">
                     <div class="link-card-container"><a class="color-black-light" :href="project.link_github" target="_blank"><i class="fab fa-github"></i></a></div>
-                    <div class="link-card-container"><a class="color-black-light" :href="project.link_website" target="_blank"><i class="fas fa-link"></i></a></div>
+                    <div v-if="project.link_website" class="link-card-container"><a class="color-black-light" :href="project.link_website" target="_blank"><i class="fas fa-link"></i></a></div>
                 </div><!--visit site or code on github-->
             </div><!--Card project-->
             `
