@@ -1,0 +1,327 @@
+:root{
+    --blue-dark-primary: #142850;
+    --blue-dark-second: #27496d;
+    --blue-winter-primary: #00a8cc;
+    --blue-winter-second: #0c7b93;
+    /*
+    
+        usar un filter en la imagen del fondo del nav y 
+        agregar un hover a las opciones del menu
+    */
+
+    --black-light: #212121;
+    --blue-primary: #001233;
+    --blue-secondary: #002855;
+    /* --blue-light: #003459; */
+    --white-light: #faf9f9;
+    --gray-fifty: #979dac;
+    --gray-light: #d3d3d3;
+    --gray-68: #686767;
+    --purple-primary: #3b28cc;
+    --green-primary: #06d6a0;
+
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    background-color: var(--white-light);
+}
+button{
+    cursor: pointer;
+    background-color: var(--gray-light);
+    border: none;
+}
+a{
+    /* color: var(--white-light); */
+    text-decoration: none;
+}
+.d-fx{
+    display: flex;
+}
+.f-column{
+    flex-direction: column;
+}
+.f-row{
+    flex-direction: row;
+}
+.f-row-reverse{
+    flex-direction: row-reverse;
+}
+.f-column-reverse{
+    flex-direction: column-reverse;
+}
+.f-center{
+    justify-content: center;
+    align-items: center;
+}
+.f-between{
+    justify-content: space-between;
+}
+.f-around{
+    justify-content: space-around;
+}
+.f-fend{
+    justify-content: flex-end;
+}
+.hidden-d{
+    display: none;
+}
+.block-d{
+    display: block;
+}
+.p-relative{
+    position: relative;
+}
+.p-absolute{
+    position: absolute;
+}
+.p-fixed{
+    position: fixed;
+}
+.txt-center{
+    text-align: center;
+}
+.color-black-light{
+    color: var(--black-light);
+}
+.color-white-light{
+    color: var(--white-light);
+}
+.color-gray-fifty{
+    color: var(--gray-fifty);
+}
+.color-purple-primary{
+    color: var(--purple-primary);
+}
+.c-btn-rounded{
+    border-radius: 100%;
+    padding: 10px;
+}
+.txt-truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.container-txt-title{
+    font-size: 2.7rem;
+}
+/*Transitions for Vue*/
+.component-fade-enter-active, .component-fade-leave-active {
+    transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active below version 2.1.8 */ {
+opacity: 0;
+}
+
+/*Animations*/
+@keyframes emojigithub {
+    0% { transform: rotateZ(0deg); }
+    25% { transform: rotateZ(-135deg); }
+    /* 50% { transform: rotateZ(-89deg); } */
+    100% { transform: rotateZ(0deg); }
+}
+/*Container nav*/
+.container-nav-main{
+    height: 50vh;
+    background-image: url("/assets/img/codes.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.nav-bar{
+    /* width: 100%;
+    padding-top: 3%; */
+    width: 100vw;
+    height: 100vh;
+}
+.nav-menu-hamburguer{
+    margin-top: 1%;
+    margin-left: 4%;
+
+}
+.nav-menu-hamburguer a{
+    /* color: var(--white-light); */
+    font-size: 1.9rem;
+    color: var(--gray-68);
+}
+.container-options-nav{
+    /* width: 35%; */
+    width: 100vh;
+    border: 1px solid var(--white-light);
+    background-color: var(--blue-dark-primary);
+}
+.container-options-nav > div{
+    margin: 20% 5%;
+    /* border-bottom: 1px solid var(--white-light); */
+
+}
+.container-options-nav > div a{
+    color: var(--white-light);
+}
+/*Presentation*/
+.container-presentation{
+    /* padding-top: 5%;
+    padding-bottom: 5%; */
+    width: 100%;
+    height: 100%;
+}
+.container-txt-home{
+    margin: 5%;
+}
+.txts-presentation-p{
+    font-size: 1.15rem;
+}
+/*containers works*/
+.btn-github{
+    padding: 5%;
+    margin-bottom: 5%;
+    background-color: bisque;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+.btn-github:hover{
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+.emoji-github{
+    display: inline-block;
+}
+.emoji-github:hover{
+    animation: emojigithub 5s; 
+}
+.container-projects-cards{
+    flex-direction: column;
+}
+/*card*/
+.card-project{
+    width: 60%;
+    height: 40%;
+    border: 1px solid var(--gray-fifty);
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    /* padding-left: 10%;
+    padding-right: 10%; */
+}
+.card-img{
+    /* top: -8%;
+    left: 50%; */
+}
+.card-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.title-card{
+    font-size: 3.1rem;
+
+}
+.card-description-project{
+    font-size: 1.4rem;
+    padding: 0 0.3rem;
+}
+.card-links{
+    margin-bottom: 10%;
+}
+.card-links i {
+    font-size: 3.1rem;
+}
+.link-card-container a{
+    transition: 0.2s;
+}
+.link-card-container a:hover{
+    /* color: var(--green-primary); */
+    color: var(--blue-winter-primary);
+}
+/*Container contact*/
+.container-contact{
+    width: 99%;
+}
+.container-contact-inpts{
+    width: 80%;
+    padding: 2rem;
+    margin: 0 auto;
+}
+.container-contact-inpts input, .container-contact-inpts textarea{
+    margin-bottom: 1.1rem;
+    border: 1px solid var(--gray-fifty);
+    font-size: 2rem;
+}
+.btn-send-mail{
+    /* height: 2rem; */
+    width: 100%;
+    background-color: var(--green-primary);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+/*Footer*/
+footer{
+    background-color: var(--blue-winter-second);
+    padding: 0.7rem;
+    color: #212121;
+}
+.networks-footer{
+    /* display: flex;
+    justify-content: space-around; */
+    width: 50%;
+    margin: 0 auto;
+}
+.networks-footer > div a{
+    color: var(--black-light);
+    transition: 0.3s;
+}
+.networks-footer > div a:hover{
+    /* color: var(--green-primary); */
+    color: var(--blue-winter-primary);
+}
+.rights-footer{
+    margin: 0 auto;
+}
+.rights-footer p{
+    font-size: 1.1rem;
+    color: var(--black-light);
+}
+
+/*Media queries*/
+@media only screen and (min-width: 650px){
+    .container-projects-cards{
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .card-project{
+        width: 30%;
+        height: 10%;
+        margin-right: 2rem;
+    }
+    .nav-bar{
+        height: 20vh;
+        width: 100vw;
+    }
+    .nav-menu-hamburguer{
+        display: none;
+    
+    }
+    .container-options-nav{
+        display: flex;
+        width: 100%;
+        height: 41%;
+        justify-content: flex-end;
+        border: none;
+    }
+    .container-options-nav>div{
+        padding: 0.3rem 1.5rem;
+        margin: 0;
+    }
+    .container-options-nav>div a:hover{
+        color: var(--blue-winter-primary);
+        cursor: pointer;
+    }
+    .m-top-desk{
+        margin-top: 2.5rem;
+    }
+}

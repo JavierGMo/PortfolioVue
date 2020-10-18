@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="assets/css/sweetalert2.min.css">
+</head>
+<body>
+    <div id="portafolioMain">
+        <div class="container-nav-main color-white-light">
+            <transition name="component-fade" mode="out-in">
+
+                <nav v-if="!hamburguerMenu" class="nav-bar d-fx f-fend p-fixed">
+                    <!-- :class="{ 'hidden-d' : hamburguerMenu }" -->
+                    <div class="container-options-nav">
+                        <div><a @click="scrollAnchor('portafolioMain')">Inicio</a></div>
+                        <div><a @click="scrollAnchor('about-me')">¿Quien soy?</a></div>
+                        <div><a @click="scrollAnchor('works')">Trabajos</a></div>
+                        <div><a @click="scrollAnchor('contact-r')">Contacto</a></div>
+                    </div>
+                </nav><!--Nav bar-->
+            </transition>
+                <div id="menu-hamburguer-id" class="nav-menu-hamburguer p-fixed">
+                    <a @click="hamburguerMenu = !hamburguerMenu">
+                        <!-- :class="[hamburguerMenu?'fa-bars':'fa-times']" -->
+                        <transition name="component-fade" mode="out-in">
+                            <i v-if="hamburguerMenu" class="fas fa-bars"></i>
+                            <i v-else class="fas fa-times"></i>
+                        </transition>
+                    </a>
+                </div>
+                {{ windowWidth }}
+            <div class="container-presentation d-fx f-column-reverse">
+                <!-- <div><img src="pulpo.png" alt="Banner"></div>img -->
+                <div class="container-txt-home d-fx f-row-reverse"><p class="txts-presentation-p"><span class="txt-presentation">Hola, soy Javier <span>&lt;programming&gt;</span></p></div><!--Presentation-->
+            </div><!--Images and start-->
+        </div><!--Nav and start-->
+
+
+        <about-me id="about-me" ref="about-me" >
+        </about-me>
+        <works-p id="works" ref="works"></works-p>
+        
+        <div class="container-projects-cards d-fx f-center">
+            <card-project 
+                        v-for="project in projects"
+                        :key="project.id"
+                        :project="project"
+            ></card-project>
+        </div>
+
+        <div id="contact-r" class="container-contact d-fx f-column m-top-desk">
+            <div class="container-txt-title"><p class="txt-center"><span>Contacto &#x1f4e8;</span></p></div>
+            <div class="container-contact-inpts d-fx f-column">
+                <input type="text" v-model="fullName" placeholder="Nombre completo"><!--Correo del remitente-->
+                <input type="email" v-model="fromMail" placeholder="Tu email"><!--Correo del remitente-->
+                <input type="text" v-model="subjectMail" placeholder="Asunto"><!--Asunto-->
+                <textarea cols="20" v-model="textMail" rows="5" placeholder="Contenido"></textarea><!--Contenido-->
+                <div class="d-fx f-center">
+                    <button class="btn-send-mail" @click="sendMail">Enviar correo</button>
+                </div>
+            </div>
+        </div>
+    </div><!--principal container-->
+    <footer>
+        <div class="d-fx f-column">
+            <div class="networks-footer d-fx f-around">
+                <div><a href=""><i class="fab fa-github"></i></a></div>
+                <div><a href=""><i class="fab fa-facebook-f"></i></a></div>
+                <div><a href=""><i class="fab fa-linkedin-in"></i></a></div>
+            </div>
+            <div class="rights-footer"><p>COPYRIGHT&copy;2020 <span class="color-purple-primary">JAVIER GONZALEZ MORA</span> TODOS LOS DERECHOS RESERVADOS</p></div>
+        </div><!--networks and reserverd rights-->
+    </footer>
+    <script src="assets/js/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
