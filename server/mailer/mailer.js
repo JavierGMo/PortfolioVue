@@ -1,8 +1,8 @@
 const nodeMailer = require('nodemailer');
 
 
-module.exports = function(to, subject, text, fullName){
-        console.log(`from ${to} subject ${subject} text ${text}`);
+module.exports = async function(to, subject, text, fullName){
+        // let mailSendCorrectly = false;
         const template = `
             <h1>Trabajo de ${fullName}</h1>
             <ul>
@@ -13,7 +13,9 @@ module.exports = function(to, subject, text, fullName){
             <p>Descripcion del mail: ${text}</p>
         `;
         const transport = nodeMailer.createTransport({
-            service : 'gmail',
+            host : 'smtp.gmail.com',
+            port : 465,
+            secure : true,
             auth : {
                 user : process.env.MAL,
                 pass : process.env.ACC
@@ -21,16 +23,17 @@ module.exports = function(to, subject, text, fullName){
         });
     
         const mailOptions = {
-            // from : '',
-            to : 'greffperonahaws@gmail.com',
+            to : process.env.MAL,
             subject : `Trabajo de ${fullName}`,
             text,
             html : template
         };
     
-        transport.sendMail(mailOptions, function(error, info){
-            console.log('Send mail');
-            if(error) console.log(`Error send mail ${error}`);
-            else console.log(`Success: ${ info.response }`);
-        });
+        const mailSendCorrectly = await transport.sendMail(mailOptions);
+
+        // console.log(`Mail sendgene ${mailSendCorrectly}`);
+        // console.log(`Mail send id ${mailSendCorrectly.messageId}`);
+        // console.log(`Mail info ${mailSendCorrectly.info}`);
+
+        return mailSendCorrectly;
 };

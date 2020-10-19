@@ -38,7 +38,6 @@ const portfolioApp = new Vue({
             
         },
         sendMail : function(){
-            console.log(`from ${this.fromMail} subject ${this.subjectMail} text : ${this.textMail}`);
             if(this.fromMail && this.subjectMail && this.textMail && this.fullName){
                 // this.dataMail.append('from', this.fromMail);
                 // this.dataMail.append('subject', this.subjectMail);
@@ -48,8 +47,8 @@ const portfolioApp = new Vue({
                     text: "Le enviare un correo lo mas rapido posible",
                     icon: 'warning',
                     showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
+                    confirmButtonColor: '#21bf73',
+                    cancelButtonColor: '#fd5e53',
                     confirmButtonText: 'Enviar',
                     cancelButtonText: 'Cancelar'
                   }).then((result) => {
@@ -68,15 +67,25 @@ const portfolioApp = new Vue({
                       })
                       .then(function(res){
                           if(res.ok && res.status === 200){
-                              
-                          }else if(res.status === 400){
-
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Genial',
+                                text: 'Me pondre lo mas rapido posible en contacto contigo'
+                            });
                           }else if(res.status === 500){
-
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Vaya algo salio mal, podrias probar otro medio',
+                            });
                           }
                         })
                       .catch(function(err){
-                          
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Vaya algo salio mal, podrias probar otro medio',
+                            });
                         });
                     }
                 });
@@ -117,7 +126,7 @@ const portfolioApp = new Vue({
             template : `
             <div class="container-about-me m-top-desk">
                 <div class="container-txt-title"><p class="txt-center">¿Quien soy? &#x1f9df;</p></div><!--Title-->
-                <div class="container-txt"><p>Hola, soy un desarrollador de software autodidacta, apasionado por las nuevas tecnologias para poder crear nuevos softwares que ayuden a resolver las necesidades de las personas.</p></div><!--Content about me-->
+                <div class="container-txt"><p class="txt-center">Hola, soy un desarrollador de software autodidacta, apasionado por las nuevas tecnologias para poder crear nuevos softwares que ayuden a resolver las necesidades de las personas.</p></div><!--Content about me-->
             </div><!--about me-->
             `
         },
@@ -125,7 +134,7 @@ const portfolioApp = new Vue({
             template : `
             <div id="works m-top-desk">
                 <div class="container-txt-title"><p class="txt-center">Trabajos &#x1f4bb;</p></div>
-                <div class="container-txt"><p>Algunos de mis trabajos que he realizado los pueden ver a continuacion o pueden ver mis codigos: </p></div>
+                <div class="container-txt"><p class="txt-center">Algunos de mis trabajos que he realizado los pueden ver a continuacion o pueden ver mis codigos: </p></div>
                 <div class="d-fx f-center"><a  class="btn-github" href="https://github.com/JavierGMo" target="_blank"><span class="color-black-light">Mi GitHub <span class="emoji-github">&#x1f47e;</span></span></a></div><!--link github-->
             </div><!--Works-->
             `

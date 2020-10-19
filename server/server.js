@@ -13,11 +13,7 @@ const port = process.env.PORT || 8000;
 app.use(express.static(path.resolve(__dirname, '../public')));
 app.use(express.static(path.resolve( __dirname, '../views')));
 
-// const pathView = path.resolve(__dirname, '../views');
 
-// app.use(express.urlencoded({
-// 	extended : true
-// }));
 app.use(bodyParser.json());
 
 
@@ -25,16 +21,29 @@ app.get('/', function(req, res){
 	res.sendFile('index.html');
 });
 app.post('/sendmail', function(req, res){
-	console.log(`params : ${req.params}`);
-	console.log(`Body : ${req.body.to}`);
-
-	console.log(sendMail(req.body.to, req.body.subject, req.body.text, req.body.fullName));
-
-	res.status(200).json({
-		ok : true,
-		data : 'Success'
-	});
+	let status = 500;
+	const resMail = sendMail(req.body.to, req.body.subject, req.body.text, req.body.fullName);
+	resMail
+			.then(function(data){
+				console.log(`Data desde el server ${data}`);
+				res.status(200).json({
+					ok : true,
+					data : 'success'
+				});
+			})
+			.catch(function(err){
+				console.error(`Error desde el server ${err}`);
+				res.status(500).json({
+					ok : false,
+					data : 'error'
+				});
+			});
+	// res.status(200).json({
+	// 	ok : true,
+	// 	data : 'success'
+	// });
 });
 app.listen(port, function(){
-	console.log(`Listening in the port ${port}`);
+	// console.log(`Listening in the port ${port}`);
+	console.log('Running...');
 });
