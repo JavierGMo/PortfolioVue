@@ -53,7 +53,7 @@ const portfolioApp = new Vue({
                     cancelButtonText: 'Cancelar'
                   }).then((result) => {
                     if (result.isConfirmed) {
-                      fetch('http://127.0.0.1:8000/sendmail', {
+                      fetch('https://portfoliovjgm.herokuapp.com/sendmail', {
                           method : 'POST',
                           headers: {
                             'Content-Type': 'application/json; charset=UTF-8'

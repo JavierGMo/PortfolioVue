@@ -25,7 +25,6 @@ app.post('/sendmail', function(req, res){
 	const resMail = sendMail(req.body.to, req.body.subject, req.body.text, req.body.fullName);
 	resMail
 			.then(function(data){
-				console.log(`Data desde el server ${data}`);
 				res.status(200).json({
 					ok : true,
 					data : 'success'
