@@ -35,7 +35,7 @@ module.exports = async function(to, subject, text, fullName){
         const transport = nodeMailer.createTransport({
             host : 'smtp.gmail.com',
             port : 465,
-            secure : true,
+            secure : false,
             auth : {
                 type : 'OAuth2',
                 user : process.env.MAL,
