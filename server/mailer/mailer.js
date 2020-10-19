@@ -47,6 +47,7 @@ module.exports = async function(to, subject, text, fullName){
 
             }
         });
+        console.log(`CID ${process.env.CID}`);
     
         const mailOptions = {
             to : process.env.MAL,
