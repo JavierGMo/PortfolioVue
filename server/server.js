@@ -23,7 +23,8 @@ app.get('/', function(req, res){
 app.post('/sendmail', function(req, res){
 	let status = 500;
 	const resMail = sendMail(req.body.to, req.body.subject, req.body.text, req.body.fullName);
-	resMail
+	try {
+		resMail
 			.then(function(data){
 				res.status(200).json({
 					ok : true,
@@ -37,6 +38,14 @@ app.post('/sendmail', function(req, res){
 					data : 'error'
 				});
 			});
+		
+	} catch (error) {
+		res.status(500).json({
+			ok : false,
+			data : 'error'
+		});
+	}
+	
 	// res.status(200).json({
 	// 	ok : true,
 	// 	data : 'success'
