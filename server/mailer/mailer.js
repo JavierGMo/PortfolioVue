@@ -17,8 +17,11 @@ module.exports = async function(to, subject, text, fullName){
             port : 465,
             secure : true,
             auth : {
+                type : 'OAuth2',
                 user : process.env.MAL,
-                pass : process.env.ACC
+                // pass : process.env.ACC
+                clientId : process.env.CID,
+                clientSecret : process.env.CSECR
             }
         });
     
