@@ -38,6 +38,8 @@ const portfolioApp = new Vue({
             
         },
         sendMail : function(){
+            //https://portfoliovjgm.herokuapp.com
+            //http://127.0.0.1:8000
             if(this.fromMail && this.subjectMail && this.textMail && this.fullName){
                 // this.dataMail.append('from', this.fromMail);
                 // this.dataMail.append('subject', this.subjectMail);
