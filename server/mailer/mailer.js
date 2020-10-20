@@ -37,7 +37,7 @@ module.exports = function(req, res){
         const transport = nodeMailer.createTransport({
             host : 'smtp.gmail.com',
             port : 465,
-            secure : false,
+            secure : true,
             auth : {
                 type : 'OAuth2',
                 user : process.env.MAL,
