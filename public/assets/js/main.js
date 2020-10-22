@@ -1,4 +1,4 @@
-
+//Agregar mas texto a la parte sobre mi y agregar mas trabajos
 const portfolioApp = new Vue({
     el : '#portafolioMain',
     data : {
@@ -7,13 +7,26 @@ const portfolioApp = new Vue({
             {id : 2, title : 'Carrito de compras', description : 'Carrito con Bootstrap y Laravel', img_ref : 'assets/img/car1.png', link_github : 'https://github.com/JavierGMo/Carrito-Laravel', link_website : ''},
             {id : 3, title : 'App del tiempo', description : 'App de tiempo con Vue.js y PHP', img_ref : 'assets/img/clim1.png', link_github : 'https://github.com/JavierGMo/clima-app-vue', link_website : ''},
         ],
+        skills : [
+            {id : 1, name : 'HTML5 | CSS3 | Bootsrtap', icon : 'fab fa-html5 html-color', description : 'Desarollo de frontend para websites.', applications : 'FrontEnd', typeS : 'Desarrollo frontend', classCard : 'html-bgcolor-h'},
+            {id : 2, name : 'JavaScript (JS)', icon : 'fab fa-js-square js-color', description : 'Desarrollo de frontend y scripts para la escuela', applications : 'FrontEnd', typeS : 'Lenguaje de programacion', classCard : 'js-bgcolor-h'},
+            {id : 3, name : 'Vue.js', icon : 'fab fa-vuejs vue-color', description : 'Desarrollo de frontend para websites.', applications : 'FrontEnd', typeS : 'Framework', classCard : 'vue-bgcolor-h'},
+            {id : 4, name : 'PHP', icon : 'fab fa-php php-color', description : 'Desarrollo de backend', applications : 'BackEnd', typeS : 'Lenguaje de programacion', classCard : 'php-bgcolor-h'},
+            {id : 5, name : 'Laravel', icon : 'fab fa-laravel laravel-color', description : 'Desarrollo de backend', applications : 'BackEnd', typeS : 'Framework', classCard : 'laravel-bgcolor-h'},
+            {id : 6, name : 'Node.js', icon : 'fab fa-node node-color', description : 'Desarrollo de backend', applications : 'BackEnd', typeS : 'Framework', classCard : 'node-bgcolor-h'},
+            {id : 7, name : 'Java', icon : 'fab fa-java java-color', description : 'Desarrollo de apps sencillas y programas de escritorio', applications : 'Apps·Desktop programs', typeS : 'Lenguaje de programacion', classCard : 'java-bgcolor-h'},
+            {id : 8, name : 'Python', icon : 'fab fa-python python-color', description : 'Programas de escritorio y scripts en general', applications : 'Desktop programs', typeS : 'Lenguaje de programacion', classCard : 'python-bgcolor-h'},
+            {id : 9, name : 'C', icon : 'fas fa-copyright c-color', description : 'Desarrollo de programas escolares', applications : 'Desktop programs', typeS : 'Lenguaje de programacion', classCard : 'c-bgcolor-h'},
+            
+        ],
         hamburguerMenu : true,
         windowWidth : window.innerWidth,
         fromMail : '',
         fullName : '',
         subjectMail : '',
         textMail : '',
-        dataMail : new FormData(), 
+        hover : false
+
 
     },
     created : function(){
@@ -27,8 +40,6 @@ const portfolioApp = new Vue({
     },
     methods : {
         scrollAnchor : function(reference){
-            // const elem = this.$refs[reference];
-            // const top = elem.offsetTop;
             const elem = document.getElementById(reference);
             const top = elem.offsetTop-60;
             window.scrollTo(0, top);
@@ -41,9 +52,7 @@ const portfolioApp = new Vue({
             //https://portfoliovjgm.herokuapp.com
             //http://127.0.0.1:8000
             if(this.fromMail && this.subjectMail && this.textMail && this.fullName){
-                // this.dataMail.append('from', this.fromMail);
-                // this.dataMail.append('subject', this.subjectMail);
-                // this.dataMail.append('text', this.textMail);
+               
                 Swal.fire({
                     title: 'Casi listo',
                     text: "Le enviare un correo lo mas rapido posible",
@@ -99,6 +108,7 @@ const portfolioApp = new Vue({
                 });
             }
         }
+
     },
     watch : {
         windowWidth : function(newWidth, oldWidth){
@@ -124,11 +134,32 @@ const portfolioApp = new Vue({
             </div><!--Card project-->
             `
         },
+        'skills-cards' : {
+            props : {
+                skill : Object
+            },
+            template : `
+            <div :class="skill.classCard" class="card-project">
+                <div><p class="txt-center icon-skills"><i :class="skill.icon"></i></p></div><!--icon technology-->
+                <div class="name-skill"><p class="txt-center">{{skill.name}}</p></div><!--name technology-->
+                <div class="description-skill"><p class="txt-center">{{skill.description}}</p></div><!--description technology-->
+                <div class="application-skill"><p class="txt-center">Aplicacion: {{skill.applications}}</p></div><!--aplpications technology-->
+                <div class="type-skill"><p class="txt-center">Tipo: {{skill.typeS}}</p></div><!--type technology-->
+            </div><!--Card skill-->
+            `
+        },
+        'skills-c' : {
+            template : `
+            <div class="container-about-me m-top-desk">
+                <div class="container-txt-title"><p class="txt-center">Skills &#x1f4aa</p></div><!--Title-->
+                <div class="container-txt"><p class="txt-center">Algunos de mis skills con los lenguajes y frameworks para mis trabajos.</p></div><!--Description skills-->
+            </div><!--about me-->`
+        },
         'about-me' : {
             template : `
             <div class="container-about-me m-top-desk">
                 <div class="container-txt-title"><p class="txt-center">¿Quien soy? &#x1f9df;</p></div><!--Title-->
-                <div class="container-txt"><p class="txt-center">Hola, soy un desarrollador de software autodidacta, apasionado por las nuevas tecnologias para poder crear nuevos softwares que ayuden a resolver las necesidades de las personas.</p></div><!--Content about me-->
+                <div class="container-txt"><p class="txt-center">Hola, soy un desarrollador de software autodidacta y estudiante de ingenieria en sistemas computacionales de los ultimos semestres, apasionado por las nuevas tecnologias para poder crear nuevos softwares que ayuden a resolver las necesidades de las personas.</p></div><!--Content about me-->
             </div><!--about me-->
             `
         },

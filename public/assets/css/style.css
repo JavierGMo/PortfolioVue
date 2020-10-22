@@ -68,6 +68,9 @@ a{
 .f-fend{
     justify-content: flex-end;
 }
+.f-wrap{
+    flex-wrap: wrap;
+}
 .hidden-d{
     display: none;
 }
@@ -118,6 +121,9 @@ a{
 /* .component-fade-leave-active below version 2.1.8 */ {
 opacity: 0;
 }
+
+
+
 
 /*Animations*/
 @keyframes emojigithub {
@@ -177,6 +183,58 @@ opacity: 0;
 .txts-presentation-p{
     font-size: 1.15rem;
 }
+/*Container skills*/
+.cards-skills-container{
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+.icon-skills{
+    font-size: 25vw;
+    margin: 0;
+}
+.name-skill{
+    font-size: 10vw;
+}
+.description-skill{
+    font-size: 5.5vw;
+}
+.application-skill, .type-skill{
+    font-size: 3.5vw;
+}
+.html-bgcolor-h,
+.js-bgcolor-h,
+.vue-bgcolor-h,
+.php-bgcolor-h,
+.laravel-bgcolor-h,
+.node-bgcolor-h,
+.java-bgcolor-h,
+.python-bgcolor-h,
+.c-bgcolor-h{
+    transition: 0.3s;
+}
+
+
+
+.html-bgcolor-h:hover{background-color: #db6400;}
+.js-bgcolor-h:hover{background-color: #fddb3a;}
+.vue-bgcolor-h:hover{background-color: #21bf73;}
+.php-bgcolor-h:hover{background-color: #28abb9;}
+.laravel-bgcolor-h:hover{background-color: #ff414d;}
+.node-bgcolor-h:hover{background-color: #81b214;}
+.java-bgcolor-h:hover{background-color: #5382a1;}
+.python-bgcolor-h:hover{background-color: #ffc93c;}
+.c-bgcolor-h:hover{background-color: #0278ae;}
+
+.html-color{color: #db6400;}
+.js-color{color: #fddb3a;}
+.vue-color{color: #21bf73;}
+.php-color{color: #28abb9;}
+.laravel-color{color: #ff414d;}
+.node-color{color: #81b214;}
+.java-color{color: #5382a1;}
+.python-color{color: #ffc93c;}
+.c-color{color: #0278ae;}
+
 /*containers works*/
 .btn-github{
     padding: 5%;
@@ -327,4 +385,30 @@ footer{
     .m-top-desk{
         margin-top: 2.5rem;
     }
+    /*Skills*/
+    .icon-skills{
+        font-size: 10vw;
+        margin: 0;
+    }
+    .name-skill{
+        font-size: 3vw;
+    }
+    .description-skill{
+        font-size: 2.5vw;
+    }
+    .application-skill, .type-skill{
+        font-size: 1.5vw;
+    }
+    .html-color,
+    .js-color,
+    .vue-color,
+    .php-color,
+    .laravel-color,
+    .node-color,
+    .java-color,
+    .python-color,
+    .c-color{
+        color: black;
+    }
+
 }

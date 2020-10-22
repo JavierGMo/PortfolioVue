@@ -20,6 +20,7 @@
                     <div class="container-options-nav">
                         <div><a @click="scrollAnchor('portafolioMain')">Inicio</a></div>
                         <div><a @click="scrollAnchor('about-me')">¿Quien soy?</a></div>
+                        <div><a @click="scrollAnchor('skills')">Skills</a></div>
                         <div><a @click="scrollAnchor('works')">Trabajos</a></div>
                         <div><a @click="scrollAnchor('contact-r')">Contacto</a></div>
                     </div>
@@ -44,6 +45,16 @@
 
         <about-me id="about-me" ref="about-me" >
         </about-me>
+
+        <skills-c id="skills"></skills-c>
+        <div class="cards-skills-container d-fx f-center f-wrap">
+            <skills-cards 
+            v-for="skill in skills"
+            :key="skill.id"
+            :skill="skill"
+            ></skills-cards>
+        </div>
+        
         <works-p id="works" ref="works"></works-p>
         
         <div class="container-projects-cards d-fx f-center">

@@ -69,7 +69,6 @@ module.exports = function(req, res){
                     data : 'error'
                 });
             }else{
-                console.log(`Result ----> ${result}`);
                 res.status(200).json({
                     ok : true,
                     data : 'succes'
@@ -78,14 +77,6 @@ module.exports = function(req, res){
 
 
         });
-        
-            
-    
-        
-
-        // console.log(`Mail sendgene ${mailSendCorrectly}`);
-        // console.log(`Mail send id ${mailSendCorrectly.messageId}`);
-        // console.log(`Mail info ${mailSendCorrectly.info}`);
 
        
 };
